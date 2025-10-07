@@ -1,14 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #7bd7c9;
+    background-color: #5bb9c3;
     color: #fff;
     margin: 0;
     padding: 0;
   }
   
   header, footer {
-    background-color: #7bd7c9;
+    background-color: #47b27b;
     padding: 1rem;
   }
   
@@ -22,7 +21,7 @@ body {
   }
   
   button:hover {
-    background-color: #3fa53f;
+    background-color: #175d17;
     color: #fff;
   }
   

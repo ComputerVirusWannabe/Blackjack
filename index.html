@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles/main.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blackjack Game</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack Royale</title>
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
+
 <body>
   <header>
     <h1>Blackjack Royale</h1>
@@ -14,7 +14,14 @@
 
   <main>
     <p>Welcome to the ultimate blackjack experience!</p>
-    <button id="start-game">Play Now</button>
+
+    <h2>Enter Your Name to Begin</h2>
+    <form action="game.html">
+      <label for="username">Player Name:</label><br>
+      <input type="text" id="username" name="username" placeholder="Your Name" required>
+      <br>
+      <button type="submit" id="start-game" class="btn">Play Now</button>
+    </form>
   </main>
 
   <footer>
