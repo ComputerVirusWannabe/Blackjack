@@ -71,6 +71,23 @@ body {
     margin: 0.5rem 0;
   }
 
+  a.btn {
+    display: inline-block;     /* block shape (I want it to look like a button not a link) */
+    padding: 0.5rem 1rem;
+    background-color: #47b27b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  a.btn:hover {
+    background-color: #175d17;
+  }
+  
+
   footer p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
