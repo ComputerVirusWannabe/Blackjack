@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- LINK TO SITE: https://cs4640.cs.virginia.edu/bfb9jf/sprint2/index.html -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +6,6 @@
   <title>Blackjack Royale</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-
 <body>
   <header>
     <h1>Blackjack Royale</h1>
@@ -17,13 +15,17 @@
     <p>Welcome to the ultimate blackjack experience!</p>
 
     <h2>Enter Your Name to Begin</h2>
-    <form action="game.html">
+    <form method="POST" action="index.php?action=home">
       <label>Player Name:</label><br>
-      <input type="text" id="username" placeholder="Your Name" required>
+      <input type="text" name="username" placeholder="Your Name" required>
       <br>
-      <button type="submit" id="startGame" >Play Now</button>
-      <a href="rules.html" class="btn">Rules</a>
+      <button type="submit">Play Now</button>
+      <a href="index.php?action=rules" class="btn">Rules</a>
     </form>
+    
+    <?php if (!empty($error)): ?>
+      <p style="color:red;"><?php echo $error; ?></p>
+    <?php endif; ?>
   </main>
 
   <footer>
