@@ -1,4 +1,13 @@
 <?php
+
+//Link: https://cs4640.cs.virginia.edu/xqe2db/Sprint3/Blackjack-main/index.php //final version currently only hosted on David's Database
+
+//Contributions (this file)
+//Initially done by Vien, David added 'history' to routing and added contributions header
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
 include_once('functions.php'); // helper functions: generateDeck, drawCard, calculateTotal, checkWinner
 
@@ -56,9 +65,22 @@ switch ($action) {
     case 'result':
         include 'result.php';
         break;
+    case 'history':
+        include 'History.php';
+        break;    
     case 'rules':
         include 'rules.php';
         break;
+    case 'delete_game': //For deleting games, connects with History.php section
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
+            require_once 'Config.php';
+            require_once 'Database.php';
+            $db = new Database(Config::$db);
+            $stmt = $db->prepare("DELETE FROM game_results WHERE id = ?");
+            $stmt->execute([$_POST['game_id']]);
+        }
+        header('Location: index.php?action=history');
+        exit;    
     case 'home':
     default:
         include 'home.php';
