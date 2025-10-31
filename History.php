@@ -3,7 +3,7 @@
 //Contributions
 //This section done by David
 
-session_start(); //For database error display is session used elsewhere
+//session_start(); //For database error display is session used elsewhere
 require_once 'Config.php';
 require_once 'Database.php';
 
