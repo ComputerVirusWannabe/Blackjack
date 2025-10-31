@@ -1,4 +1,7 @@
 <?php
+
+//Contributions
+//Done by Vien, David added contributions header comment
 function generateDeck() {
     $suits = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
     $colors = ['S','H','D','C'];
@@ -8,7 +11,7 @@ function generateDeck() {
             $deck[] = $suit.$color;
         }
     }
-    shuffle($deck);
+    shuffle($deck); 
     return $deck;
 }
 

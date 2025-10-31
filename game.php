@@ -1,8 +1,21 @@
+<?php
+
+//Contributions
+//Made by Vien, post section edited by David for more functionality later
+
+require_once 'functions.php'; //game logic helpers
+
+if (empty($_SESSION['playerHand']) || empty($_SESSION['dealerHand'])) {
+    header('Location: index.php?action=home');
+    exit; //prevent access without game state, safeguard added during debugging
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name = "contributions" content = "File made by Vien, contributions section and connected to database by David">
   <title>Blackjack Game</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -30,6 +43,7 @@
         <p>Total: <?php echo calculateTotal($_SESSION['playerHand']); ?></p>
 
         <form method="POST" action="index.php?action=game">
+            <input type="hidden" name="playerName" value="<?php echo htmlspecialchars($_SESSION['playerName'] ?? 'Player'); ?>">
             <button type="submit" name="action" value="hit">Hit</button>
             <button type="submit" name="action" value="stand">Stand</button>
         </form>
