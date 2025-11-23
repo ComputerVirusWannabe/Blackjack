@@ -49,5 +49,6 @@ if (empty($_SESSION['playerHand']) || empty($_SESSION['dealerHand'])) {
         </form>
     </section>
 </main>
+<script src="main.js"></script>
 </body>
 </html>

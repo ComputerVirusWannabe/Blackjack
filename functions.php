@@ -2,6 +2,9 @@
 
 //Contributions
 //Done by Vien, David added contributions header comment
+
+date_default_timezone_set('America/New_York');
+
 function generateDeck() {
     $suits = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
     $colors = ['S','H','D','C'];
@@ -28,6 +31,7 @@ function calculateTotal($hand) {
         elseif ($value === 'A') { $total += 11; $aces++; }
         else $total += 10;
     }
+    # Adjust for aces
     while ($total > 21 && $aces > 0) {
         $total -= 10;
         $aces--;
