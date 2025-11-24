@@ -33,7 +33,7 @@ body {
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
-    flex-wrap: wrap; /* cards wrap instead of overflow */
+    flex-wrap: wrap;
   }
   
   .card {
@@ -71,8 +71,8 @@ body {
     margin: 0.5rem 0;
   }
 
-  a.btn {
-    display: inline-block;     /* block shape (I want it to look like a button not a link) */
+  a.bn {
+    display: inline-block;
     padding: 0.5rem 1rem;
     background-color: #47b27b;
     color: white;
@@ -83,11 +83,10 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  a.btn:hover {
+  a.bn:hover {
     background-color: #175d17;
   }
   
-
   footer p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
@@ -115,21 +114,21 @@ body {
     margin-bottom: 1rem;
   }
   
-  .btn{
+  .bn{
     background-color: #47b27b;
     color: #fff;
     border: 1.5px solid #175d17;
     padding: 0.75rem 1.5rem;
     font-size: 1.1rem;
   }
-  .btn:hover {
+  .bn:hover {
     background-color: #175d17;
     border: 1.5px solid #47b27b;
   }
 
   .game-container {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -155,7 +154,6 @@ body {
   }
   .controls button:hover {
     background-color: #47b27b;
-    
   }
 
    @media (max-width: 600px) {
@@ -174,4 +172,76 @@ body {
       height: 75px;
       font-size: 1.5rem;
     }
+  }
+
+  .error-box, .success-box {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 0.5s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .error-box {
+    background: #e74c3c;
+    color: white;
+    border: 2px solid #c0392b;
+  }
+
+  .success-box {
+    background: #27ae60;
+    color: white;
+    border: 2px solid #219653;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .flash {
+    animation: flash 0.4s ease;
+  }
+
+  @keyframes flash {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); opacity: 0.9; }
+  }
+
+  .highlight {
+    box-shadow: 0 0 25px #f1c40f, inset 0 0 20px rgba(241,196,15,0.4) !important;
+    transition: all 0.3s ease;
+  }
+
+  .win-celebration {
+    animation: winGlow 2s ease-in-out;
+  }
+
+  @keyframes winGlow {
+    0%, 100% { background: #5bb9c3; }
+    50% { background: #27ae60; }
+  }
+
+  .bust-effect {
+    animation: bustShake 0.8s ease;
+  }
+
+  @keyframes bustShake {
+    0%, 100% { background: #5bb9c3; }
+    25% { background: #e74c3c; }
+    50% { background: #c0392b; }
+    75% { background: #e74c3c; }
+  }
+
+  .text-success { color: #27ae60; }
+  .text-danger { color: #e74c3c; }
+  .text-warning { color: #f1c40f; }
+
+  .invalid {
+    border: 3px solid #e74c3c !important;
+    box-shadow: 0 0 10px #e74c3c;
+    background-color: #ffebee;
   }

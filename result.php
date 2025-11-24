@@ -56,7 +56,7 @@ unset($_SESSION['deck'], $_SESSION['playerHand'], $_SESSION['dealerHand']);
   <title>Blackjack Result</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body data-page="result">
 <header><h1>Blackjack Royale</h1></header>
 <main class="result-container">
     <h2>Game Over!</h2>
@@ -77,5 +77,6 @@ echo $messages[$outcome] ?? 'Unknown Result';
     <a href="index.php?action=home" class="btn">Play Again</a>
     <a href="index.php?action=history" class="btn">Game History</a>
 </main>
+<script src="main.js"></script>
 </body>
 </html>
