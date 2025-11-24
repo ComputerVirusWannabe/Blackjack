@@ -19,7 +19,7 @@ if (empty($_SESSION['playerHand']) || empty($_SESSION['dealerHand'])) {
   <title>Blackjack Game</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+<body data-page="game">
 <header><h1>Blackjack</h1></header>
 <main class="game-container">
 

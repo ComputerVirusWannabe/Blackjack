@@ -1,6 +1,6 @@
 <?php
 
-//Link: https://cs4640.cs.virginia.edu/xqe2db/Sprint3/Blackjack-main/index.php //final version currently only hosted on David's Database
+//Link: https://cs4640.cs.virginia.edu/xqe2db/Sprint4/index.php //final version currently only hosted on David's Database
 
 //Contributions (this file)
 //Initially done by Vien, David added 'history' to routing and added contributions header

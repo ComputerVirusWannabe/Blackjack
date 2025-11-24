@@ -7,7 +7,7 @@
   <title>Blackjack Royale</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-<body>
+<body data-page="home">
   <header>
     <h1>Blackjack Royale</h1>
   </header>
@@ -17,21 +17,15 @@
 
     <h2>Enter Your Name to Begin</h2>
 
-    <!-- Added id="nameForm" for JS to attach listeners -->
     <form id="nameForm" method="POST" action="index.php?action=home">
       <label for="playerName">Player Name:</label><br>
-      <!-- name="username" keeps PHP backend happy -->
       <input id="playerName" name="username" type="text" placeholder="Your Name">
       <br>
 
       <button type="submit" id="startBtn">Play Now</button>
-      <a href="index.php?action=rules" class="btn">Rules</a>
-
-      <!-- Error box for client-side validation -->
-      <div class="error-box"></div>
+      <a href="index.php?action=rules" class="bn">Rules</a>
     </form>
 
-    <!-- Server side error fallback -->
     <?php if (!empty($error)): ?>
       <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
@@ -40,6 +34,6 @@
   <footer>
     <p>&copy; 2025 Blackjack Game</p>
   </footer>
-  <script src="home.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
